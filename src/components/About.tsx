@@ -2,6 +2,9 @@
 import AboutDivider from "../constant/AboutDivider";
 import { useMobile } from "../hooks/useMobile";
 import Card from "./Card";
+import CooperativeCard from "./CooperativeCard";
+import DigitalCard from "./DigitalCard";
+import ImpactCard from "./ImpactCard";
 
 export default function About() {
   const isMobile = useMobile();
@@ -79,23 +82,20 @@ export default function About() {
           </p>
         </div>
 
-        {/* BOTTOM ROW: CARDS – straight rectangle, 24px gaps */}
+        {/* BOTTOM ROW: CARDS – skewed shapes with 24px gaps */}
         <div
-          className="flex items-stretch gap-6"
+          className="flex items-stretch"
           style={{ height: "550px" }} // lock card height row to Figma
         >
-          <Card
-            variant="cooperative"
+          <CooperativeCard
             title="Worker-Owned Cooperative"
             description="Built and run by the people who power it. Together, we share responsibility, decisions, and success."
           />
-          <Card
-            variant="digital"
+          <DigitalCard
             title="Digital Solutions That Empower"
             description="Websites, apps, and tools crafted for organizations of all sizes. Every solution is designed to be reliable, scalable & user-friendly."
           />
-          <Card
-            variant="impact"
+          <ImpactCard
             title="Driven by Social Impact"
             description="Technology that creates value for both communities & companies. Our work is guided by ethics, inclusivity, and long-term benefit."
           />

@@ -73,13 +73,21 @@ export default function Card({ title, description, variant }: CardProps) {
     );
   }
 
-  // Desktop card styles
+  // Desktop card styles with skewed design
   return (
     <div
       className="relative flex-shrink-0"
       style={{
         width: "440px", // Figma: card width
         height: "550px", // Figma: card height
+        transform: "rotate(-2deg)", // Skew effect
+        transition: "transform 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "rotate(0deg) scale(1.02)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "rotate(-2deg)";
       }}
     >
       {/* ORANGE CARD BACKGROUND */}
@@ -92,10 +100,8 @@ export default function Card({ title, description, variant }: CardProps) {
         {/* BLACK DIAGONAL TEXT BAND (BOTTOM) */}
         <div className="absolute inset-x-0 bottom-0 h-[210px] overflow-hidden">
           {/* Slanted black background */}
-          <div className="absolute inset-x-[-40px] bottom-[-40px] h-[260px] bg-black origin-bottom-left -skew-y-[6deg]" />
 
-          {/* Text content, NOT skewed */}
-          <div className="relative z-10 px-6 pt-4 pb-6 text-white">
+          <div className="relative z-10 px-6 pt-4 pb-6 text-white bg-[#0F0F0F] h-full">
             <h3
               className="uppercase"
               style={{
