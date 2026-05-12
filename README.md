@@ -1,4 +1,14 @@
-# React + TypeScript + Vite
+# Folkware Website
+
+A modern website built with React, TypeScript, and Vite.
+
+## Quick Start
+
+```bash
+cd /home/jojo/agent-workspace/projects/folkware-website
+npm install
+npm run dev
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
